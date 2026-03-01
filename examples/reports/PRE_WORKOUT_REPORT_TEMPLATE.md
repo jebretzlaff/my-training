@@ -14,7 +14,7 @@ Coach note: [Brief weather-relevant tip. Omit if no actionable weather context.]
 Current Status Summary:
 RHR: [XX] bpm (baseline: [XX] bpm)
 HRV: [XX] ms (7d avg: [XX] ms)
-Sleep Hours: [X.XX] hours
+Sleep: [XhYm]
 Sleep Quality: [X/4]
 TSB: [X.XX]
 CTL: [XX.XX]
@@ -28,7 +28,7 @@ TID 28d: [Classification] (PI: [X.XX]) — drift: [shifting/acute_depolarization
 Durability: [X.XX]% 7d mean([X]) ([trend])
 EF: [X.XX] 7d mean([X]) ([trend])
 Monotony: [X.XX] ([primary sport] [X.XX], total [X.XX]) — [note]
-Total hours, last 7 days: [XX.XX] hours
+Total hours, last 7 days: [XhYm]
 Total activities, last 7 days: [XX]
 Total TSS, last 7 days: [XXX]
 
@@ -79,3 +79,7 @@ suitability (proceed/modify/skip with rationale), coach tip.]
 - **Normal metrics, Go recommendation:** Keep interpretation to 2-3 sentences
 - **Threshold breach or Modify/Skip:** Expand with specific reasoning
 - **Rest day:** Brief — confirm recovery status, preview next session
+
+## Formatting Rule
+
+- **Durations and sleep:** Always use `_formatted` fields from JSON (e.g., `sleep_formatted`, `duration_formatted`, `total_training_formatted`). Never convert decimal `_hours` fields to display format — the formatted values are pre-calculated from raw seconds and avoid rounding errors.
