@@ -10,7 +10,7 @@
 - Pre-computed `readiness_decision` replaces implicit go/modify/skip synthesis
 - Priority ladder: P0 (safety stop) → P1 (acute overload) → P2 (accumulated fatigue) → P3 (green light)
 - 7 signals evaluated: HRV, RHR, Sleep, TSB, ACWR, Feel, RI — each with green/amber/red/unavailable status
-- Phase modifiers: Build loosens thresholds (3 amber), Taper/Race week/Recovery/Deload tighten (1 amber)
+- Phase modifiers: Build loosens thresholds (3 amber), Taper/Race week tighten (1 amber), all others default (2 amber)
 - Structured modification output: trigger categories + adjustment directions (intensity/volume/cap_zone)
 - Wires into existing alerts (P0/P1 read tier-1 alarms, no duplication)
 - AAS row removed from threshold table — replaced by `readiness_decision` reference
@@ -802,8 +802,8 @@ Missing signals are classified as `unavailable` and excluded from amber/red coun
 | Build | 3 | -20 | No | Fatigue accumulation is the goal |
 | Taper | 1 | -15 | Yes | Protecting race freshness |
 | Race week | 1 | -15 | Yes | Race freshness paramount |
-| Recovery / Deload | 1 | -15 | No | Recovery is the whole point |
-| Overreached | 1 | -15 | No | Already compromised |
+| Recovery / Deload | 2 (default) | -15 | No | Already resting — single amber is noise |
+| Overreached | 2 (default) | -15 | No | Already compromised — default threshold sufficient |
 | Base / Peak / null | 2 (default) | -15 | No | Standard operation |
 
 **Structured Modification Output:**
