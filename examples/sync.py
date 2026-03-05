@@ -4,6 +4,15 @@ Intervals.icu → GitHub/Local JSON Export
 Exports training data for LLM access.
 Supports both automated GitHub sync and manual local export.
 
+Version 3.73 - Phase detection: week-aligned prospective windows
+  - Stream 2 windows aligned to training week instead of rolling 7-day from today
+  - Fixes mid-week deload misclassification: rolling window leaked next week's build sessions
+  - Configurable week start: .sync_config.json "week_start", WEEK_START env var, or --week-start CLI
+  - Default Monday (ISO). Set once in config, never think about it again
+  - Current week window: today → week end. Next week: next full training week
+  - Planned TSS delta projected to full-week equivalent from remaining days
+  - Hard sessions and plan coverage scoped to current week remainder only
+
 Version 3.72 - Readiness Decision (AAS formalization)
   - Pre-computed go/modify/skip via P0-P3 priority ladder (safety → overload → fatigue → green light)
   - 7 signals evaluated: HRV, RHR, Sleep, TSB, ACWR, Feel, RI — green/amber/red/unavailable
@@ -70,7 +79,7 @@ class IntervalsSync:
     HISTORY_FILE = "history.json"
     UPSTREAM_REPO = "CrankAddict/section-11"
     CHANGELOG_FILE = "changelog.json"
-    VERSION = "3.72"
+    VERSION = "3.73"
 
     # Sport family mapping for per-sport monotony calculation
     # Multi-sport athletes get inflated total monotony when cross-training
@@ -100,14 +109,19 @@ class IntervalsSync:
     OUTDOOR_TYPES = {"Ride", "MountainBikeRide", "GravelRide", "EBikeRide",
                      "Run", "TrailRun", "NordicSki", "Walk", "Hike"}
     
+    # Training week start day (Python weekday: Mon=0, Tue=1, Wed=2, Thu=3, Fri=4, Sat=5, Sun=6)
+    # Default Monday (ISO). Override via .sync_config.json, WEEK_START env var, or --week-start CLI arg.
+    WEEK_START_DAY = 0
+    
     def __init__(self, athlete_id: str, intervals_api_key: str, github_token: str = None, 
-                 github_repo: str = None, debug: bool = False):
+                 github_repo: str = None, debug: bool = False, week_start_day: int = None):
         self.athlete_id = athlete_id
         self.intervals_auth = base64.b64encode(f"API_KEY:{intervals_api_key}".encode()).decode()
         self.github_token = github_token
         self.github_repo = github_repo
         self.debug = debug
         self.script_dir = Path(__file__).parent
+        self.week_start_day = week_start_day if week_start_day is not None else self.WEEK_START_DAY
     
     def _intervals_get(self, endpoint: str, params: Dict = None) -> Dict:
         """Fetch from Intervals.icu API"""
@@ -1994,6 +2008,14 @@ class IntervalsSync:
                                  stream1: Dict, today: str) -> Dict:
         """
         Extract Stream 2 (prospective) features from planned workouts and race calendar.
+        
+        Windows are aligned to the training week (configurable via
+        .sync_config.json, WEEK_START env var, or --week-start CLI;
+        default Monday/ISO). This prevents mid-week contamination where
+        a deload week's window leaks into the next build week.
+        
+        - Current week remainder: today → last day of training week
+        - Next week: next full training week (7 days)
         """
         result = {
             "planned_tss_delta": None,
@@ -2017,16 +2039,21 @@ class IntervalsSync:
         if not planned_workouts:
             return result
         
-        # Rolling 7-day windows for plan coverage (aligned with planned_tss_delta)
-        current_week_start = today_date
-        current_week_end = today_date + timedelta(days=6)
-        next_week_start = today_date + timedelta(days=7)
-        next_week_end = today_date + timedelta(days=13)
+        # Week-aligned boundaries (configurable via self.week_start_day)
+        # week_start_day: Mon=0..Sun=6 (Python weekday convention)
+        # Week end day = day before start (e.g., Sun start → Sat end, Mon start → Sun end)
+        week_end_day = (self.week_start_day - 1) % 7
+        today_weekday = today_date.weekday()  # Mon=0..Sun=6
+        days_to_week_end = (week_end_day - today_weekday) % 7
+        current_week_end = today_date + timedelta(days=days_to_week_end)
+        # Next training week: day after current_week_end → 6 days later
+        next_week_start = current_week_end + timedelta(days=1)
+        next_week_end = next_week_start + timedelta(days=6)
         
-        # Classify planned workouts into current and next rolling week
+        # Classify planned workouts into current week remainder and next full week
         current_week_workouts = []
         next_week_workouts = []
-        next_7d_tss = 0
+        current_week_tss = 0
         
         for pw in planned_workouts:
             pw_date_str = (pw.get("date") or "")[:10]
@@ -2037,27 +2064,21 @@ class IntervalsSync:
             except ValueError:
                 continue
             
-            # Next 7 days TSS (rolling, for planned_tss_delta)
-            days_from_today = (pw_date - today_date).days
-            if 0 <= days_from_today < 7:
-                next_7d_tss += (pw.get("planned_tss") or 0)
-            
-            # Rolling week classification (for plan coverage)
-            if current_week_start <= pw_date <= current_week_end:
+            # Current week remainder (today through Saturday)
+            if today_date <= pw_date <= current_week_end:
                 current_week_workouts.append(pw)
+                current_week_tss += (pw.get("planned_tss") or 0)
+            # Next full training week (Sunday through Saturday)
             elif next_week_start <= pw_date <= next_week_end:
                 next_week_workouts.append(pw)
-        
-        # Plan coverage: sessions / expected sessions
-        # Expected sessions = avg activity count from stream1 recent weeks
-        tss_values = stream1.get("tss_values", [])
-        weeks_avail = stream1.get("weeks_available", 0)
         
         # Plan coverage: sessions / expected sessions
         # TODO(v3.71): expected_sessions should use avg activity_count from weekly_180d rows
         # (available in rows but not currently passed through stream1 features).
         # Hard-coded 5 means athletes training 7×/week get coverage >1.0, and 3×/week get 0.6.
         # Impact is limited: plan_coverage only adjusts confidence, not classification.
+        tss_values = stream1.get("tss_values", [])
+        weeks_avail = stream1.get("weeks_available", 0)
         expected_sessions = 5
         if weeks_avail > 0:
             pass  # Future: extract from weekly_rows activity_count average
@@ -2069,46 +2090,42 @@ class IntervalsSync:
             len(next_week_workouts) / expected_sessions, 2
         ) if expected_sessions > 0 else 0.0
         
-        # Planned TSS delta: planned next 7d / avg of prior 21d actual
+        # Planned TSS delta: current week remainder planned / avg of prior 3 weeks actual
         avg_tss_prev_21d = None
         if tss_values and len(tss_values) >= 3:
             avg_tss_prev_21d = statistics.mean(tss_values[-3:])
         elif tss_values:
             avg_tss_prev_21d = statistics.mean(tss_values)
         
-        if avg_tss_prev_21d and avg_tss_prev_21d > 0 and next_7d_tss > 0:
-            result["planned_tss_delta"] = round(next_7d_tss / avg_tss_prev_21d, 2)
+        # Scale: project current week remainder to full-week equivalent
+        # so it's comparable to the historical weekly average.
+        # days_remaining = days_to_week_end + 1 (inclusive of today)
+        days_remaining = days_to_week_end + 1
+        if avg_tss_prev_21d and avg_tss_prev_21d > 0 and current_week_tss > 0 and days_remaining > 0:
+            projected_week_tss = current_week_tss * (7 / days_remaining)
+            result["planned_tss_delta"] = round(projected_week_tss / avg_tss_prev_21d, 2)
         
         # Next week TSS delta (for Deload confirmation: does load resume?)
         next_week_tss = sum(pw.get("planned_tss") or 0 for pw in next_week_workouts)
         if avg_tss_prev_21d and avg_tss_prev_21d > 0 and next_week_tss > 0:
             result["next_week_tss_delta"] = round(next_week_tss / avg_tss_prev_21d, 2)
         
-        # Hard sessions planned (next 7 days)
+        # Hard sessions planned (current week remainder only)
         # A planned workout is "hard" if its name or type suggests intensity
         hard_count = 0
-        next_7d_sessions = 0
-        for pw in planned_workouts:
-            pw_date_str = (pw.get("date") or "")[:10]
-            if not pw_date_str or pw_date_str == "unknown":
-                continue
-            try:
-                pw_date = datetime.strptime(pw_date_str, "%Y-%m-%d")
-            except ValueError:
-                continue
-            if 0 <= (pw_date - today_date).days < 7:
-                next_7d_sessions += 1
-                ws = pw.get("workout_summary") or ""
-                cat = (pw.get("type") or "").upper()
-                name = (pw.get("name") or "").lower()
-                # Heuristic: interval markers, race categories, or intensity keywords
-                if ("×" in ws or "sets" in ws.lower() or
-                    cat in ("RACE_A", "RACE_B", "RACE_C") or
-                    any(kw in name for kw in ("interval", "vo2", "threshold", "sprint", "tempo",
-                                               "race", "hard", "intensity", "sweet spot"))):
-                    hard_count += 1
+        current_week_sessions = len(current_week_workouts)
+        for pw in current_week_workouts:
+            ws = pw.get("workout_summary") or ""
+            cat = (pw.get("type") or "").upper()
+            name = (pw.get("name") or "").lower()
+            # Heuristic: interval markers, race categories, or intensity keywords
+            if ("×" in ws or "sets" in ws.lower() or
+                cat in ("RACE_A", "RACE_B", "RACE_C") or
+                any(kw in name for kw in ("interval", "vo2", "threshold", "sprint", "tempo",
+                                           "race", "hard", "intensity", "sweet spot"))):
+                hard_count += 1
         result["hard_sessions_planned"] = hard_count
-        result["next_7d_sessions"] = next_7d_sessions
+        result["next_7d_sessions"] = current_week_sessions  # renamed semantically but key preserved for compat
         
         # Stream 2 suggested phase
         result["suggested_phase"] = self._phase_from_stream2(result)
@@ -2785,9 +2802,6 @@ class IntervalsSync:
         modifiers = {
             "Build":       {"amber_threshold": 3, "tsb_amber": -20, "tighten_red": False, "modifier_applied": "build_loosened"},
             "Taper":       {"amber_threshold": 1, "tsb_amber": -15, "tighten_red": True,  "modifier_applied": "taper_tightened"},
-            "Recovery":    {"amber_threshold": 1, "tsb_amber": -15, "tighten_red": False, "modifier_applied": "recovery_tightened"},
-            "Deload":      {"amber_threshold": 1, "tsb_amber": -15, "tighten_red": False, "modifier_applied": "deload_tightened"},
-            "Overreached": {"amber_threshold": 1, "tsb_amber": -15, "tighten_red": False, "modifier_applied": "overreached_tightened"},
         }
         
         default = {"amber_threshold": 2, "tsb_amber": -15, "tighten_red": False, "modifier_applied": "default"}
@@ -5193,6 +5207,8 @@ def main():
     parser.add_argument("--output", help="Save to local file instead of GitHub")
     parser.add_argument("--anonymize", action="store_true", default=True, help="Remove identifying information (default: enabled)")
     parser.add_argument("--debug", action="store_true", help="Show debug output for API fields")
+    parser.add_argument("--week-start", choices=["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+                        default=None, help="Training week start day (default: mon, or from config)")
     parser.add_argument("--generate-history", action="store_true", help="Force generate history.json (pulls up to 3 years)")
     
     args = parser.parse_args()
@@ -5212,6 +5228,10 @@ def main():
             config["github_token"] = github_token
         if github_repo:
             config["github_repo"] = github_repo
+        
+        week_input = input("Training week starts on (mon/tue/wed/thu/fri/sat/sun, default: mon): ").strip().lower()
+        if week_input in ("mon", "tue", "wed", "thu", "fri", "sat", "sun"):
+            config["week_start"] = week_input
             
         with open(".sync_config.json", "w") as f:
             json.dump(config, f, indent=2)
@@ -5232,12 +5252,19 @@ def main():
     github_token = args.github_token or config.get("github_token") or os.getenv("GITHUB_TOKEN")
     github_repo = args.github_repo or config.get("github_repo") or os.getenv("GITHUB_REPO")
     
+    # Week start: CLI → config file → env var → default (Monday/ISO)
+    week_day_map = {"mon": 0, "tue": 1, "wed": 2, "thu": 3, "fri": 4, "sat": 5, "sun": 6}
+    week_start_raw = args.week_start or config.get("week_start") or os.getenv("WEEK_START") or "mon"
+    week_start_day = week_day_map.get(week_start_raw.lower(), 0)
+    week_start_name = {v: k for k, v in week_day_map.items()}.get(week_start_day, "mon")
+    
     print(f"📋 Configuration:")
     print(f"   Athlete ID: {athlete_id[:5] + '...' if athlete_id else 'NOT SET'}")
     print(f"   Intervals Key: {intervals_key[:5] + '...' if intervals_key else 'NOT SET'}")
     print(f"   GitHub Repo: {github_repo or 'NOT SET'}")
     print(f"   GitHub Token: {'SET' if github_token else 'NOT SET'}")
     print(f"   Days: {args.days}")
+    print(f"   Week start: {week_start_name}")
     print(f"   Version: {IntervalsSync.VERSION}")
     
     if not athlete_id or not intervals_key:
@@ -5245,7 +5272,8 @@ def main():
         print("   Run: python sync.py --setup")
         return
     
-    sync = IntervalsSync(athlete_id, intervals_key, github_token, github_repo, debug=args.debug)
+    sync = IntervalsSync(athlete_id, intervals_key, github_token, github_repo, 
+                         debug=args.debug, week_start_day=week_start_day)
     
     # Manual history generation
     if args.generate_history:
