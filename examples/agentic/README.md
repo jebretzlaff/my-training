@@ -89,6 +89,8 @@ Credentials loaded from (first match wins):
 2. `.sync_config.json` in working directory (same file sync.py uses)
 3. Environment: `ATHLETE_ID`, `INTERVALS_KEY`
 
+To keep your local JSON data fresh automatically (so push.py and your agent always have current data), see [json-local-sync](../json-local-sync/SETUP.md).
+
 Python import also works:
 
 ```python
