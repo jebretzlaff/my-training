@@ -5,9 +5,10 @@ Exports training data for LLM access.
 Supports both automated GitHub sync and manual local export.
 
 Version 3.80 - --update orphan cleanup: detects and removes local files no longer in the upstream
-  manifest (e.g. files moved or deleted in a repo restructure). Runs after the pull step, shows
-  orphaned files with [removed from repo] tag, prompts for confirmation. Empty parent directories
-  cleaned up automatically. Skips manifest.json, .tmp files, and hidden files.
+  manifest (e.g. files moved or deleted in a repo restructure), and standalone empty directories.
+  Runs after the pull step, shows orphaned items with [removed from repo] / [empty directory] tags,
+  prompts for confirmation. Empty parent directories cleaned up automatically.
+  Skips manifest.json, .tmp files, and hidden files/directories.
 
 Version 3.79 - Feel/RPE fix: removed feel from daily history rows (activity-level field, not wellness),
   added RPE to weekly history tier, correct activity-sourced aggregation with counts.
@@ -5407,6 +5408,35 @@ def _find_orphaned_files(upstream_files, section11_dir):
     return sorted(orphaned)
 
 
+def _find_empty_dirs(section11_dir):
+    """Find directories inside section11/ that contain no visible files or subdirectories.
+    Walks bottom-up so nested empty dirs are caught. Returns sorted list of relative path strings.
+    Skips hidden directories at the top level of the walk."""
+    empty_dirs = []
+
+    # Bottom-up walk so we catch nested empties
+    for root, dirs, files in os.walk(section11_dir, topdown=False):
+        rel_dir = Path(root).relative_to(section11_dir)
+
+        # Don't flag section11/ itself
+        if rel_dir == Path('.'):
+            continue
+
+        # Skip hidden directories
+        if any(part.startswith('.') for part in rel_dir.parts):
+            continue
+
+        # Visible files = non-hidden, non-.tmp
+        visible_files = [f for f in files if not f.startswith('.') and not f.endswith('.tmp')]
+        # Visible subdirs = non-hidden
+        visible_dirs = [d for d in dirs if not d.startswith('.')]
+
+        if not visible_files and not visible_dirs:
+            empty_dirs.append(str(rel_dir))
+
+    return sorted(empty_dirs)
+
+
 def do_generate_manifest():
     """
     Generate manifest.json from the current repo directory.
@@ -5673,18 +5703,24 @@ def do_update():
             print(f"\n   ✅ {len(updated)} file{'s' if len(updated) != 1 else ''} updated")
 
     # --- Orphan cleanup (runs regardless of whether files were updated) ---
-    orphaned = _find_orphaned_files(upstream_files, target_dir)
+    orphaned_files = _find_orphaned_files(upstream_files, target_dir)
+    empty_dirs = _find_empty_dirs(target_dir)
 
-    if orphaned:
-        print(f"\n   Orphaned files ({len(orphaned)} — no longer in repo):\n")
+    if orphaned_files or empty_dirs:
+        total = len(orphaned_files) + len(empty_dirs)
+        print(f"\n   Orphaned items ({total} — not in repo):\n")
 
-        path_width = max(len(p) for p in orphaned)
-        for p in orphaned:
-            print(f"   {p.ljust(path_width)}  [removed from repo]")
+        # Build display list with tags
+        all_items = [(p, "[removed from repo]") for p in orphaned_files]
+        all_items += [(d + "/", "[empty directory]") for d in empty_dirs]
+
+        path_width = max(len(item[0]) for item in all_items)
+        for name, tag in all_items:
+            print(f"   {name.ljust(path_width)}  {tag}")
 
         print()
         try:
-            answer = input(f"   Remove {len(orphaned)} orphaned file{'s' if len(orphaned) != 1 else ''}? [y/N] ").strip().lower()
+            answer = input(f"   Remove {total} orphaned item{'s' if total != 1 else ''}? [y/N] ").strip().lower()
         except (EOFError, KeyboardInterrupt):
             print("\n   Skipped")
             return
@@ -5694,7 +5730,9 @@ def do_update():
             return
 
         removed = 0
-        for p in orphaned:
+
+        # Delete orphaned files first
+        for p in orphaned_files:
             full_path = target_dir / p
             try:
                 full_path.unlink()
@@ -5703,19 +5741,30 @@ def do_update():
             except Exception as e:
                 print(f"   ❌ {p}  failed: {e}")
 
-        # Remove empty parent directories within section11/
-        for p in orphaned:
+        # Remove empty parent directories left behind by file deletions
+        for p in orphaned_files:
             parent = (target_dir / p).parent
             while parent != target_dir:
                 try:
                     parent.rmdir()  # Only succeeds if empty
                     print(f"   🗑️  {parent.relative_to(target_dir)}/  [empty directory]")
                 except OSError:
-                    break  # Not empty or other error — stop walking up
+                    break
                 parent = parent.parent
 
+        # Remove standalone empty directories (sorted deepest-first to handle nesting)
+        for d in sorted(empty_dirs, key=lambda x: x.count(os.sep), reverse=True):
+            dir_path = target_dir / d
+            try:
+                if dir_path.exists():
+                    dir_path.rmdir()
+                    removed += 1
+                    print(f"   🗑️  {d}/")
+            except OSError as e:
+                print(f"   ❌ {d}/  failed: {e}")
+
         if removed:
-            print(f"\n   🗑️  {removed} orphaned file{'s' if removed != 1 else ''} removed")
+            print(f"\n   🗑️  {removed} orphaned item{'s' if removed != 1 else ''} removed")
 
 
 def notify_if_updates_available():
