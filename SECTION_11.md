@@ -1,15 +1,23 @@
 # Section 11 — AI Coach Protocol
 
-**Protocol Version:** 11.13  
-**Last Updated:** 2026-03-05
+**Protocol Version:** 11.14  
+**Last Updated:** 2026-03-12
 **License:** [MIT](https://opensource.org/licenses/MIT)
 
 ### Changelog
 
+**v11.14 — Feel/RPE Scope Clarification:**
+- Feel removed from automated readiness_decision signals — 6 signals remain (HRV, RHR, Sleep, TSB, ACWR, RI)
+- Feel/RPE defined at three layers: wellness (daily entry), activity (post-session), in-session (real-time)
+- Feel enriches coaching decisions when present in data; solicited when decision-relevant; never required as routine input
+- Feel removed from Tier 1 PRIMARY READINESS hierarchy — replaced by Sleep (quality + hours)
+- Readiness Thresholds header updated: "All Available Must Be Met" (unavailable metrics do not block progression)
+- Feel/RPE Override block added to readiness_decision: escalation unconditional, de-escalation P2 only (max 2 amber, athlete must attribute cause, AI documents override). P0/P1 not overridable. Underreporting caveat when 3+ objective signals converge.
+
 **v11.13 — Readiness Decision (AAS Formalization):**
 - Pre-computed `readiness_decision` replaces implicit go/modify/skip synthesis
 - Priority ladder: P0 (safety stop) → P1 (acute overload) → P2 (accumulated fatigue) → P3 (green light)
-- 6 signals evaluated: HRV, RHR, Sleep, TSB, ACWR, RI — each with green/amber/red/unavailable status
+- 7 signals evaluated: HRV, RHR, Sleep, Feel, TSB, ACWR, RI — each with green/amber/red/unavailable status
 - Phase modifiers: Build loosens thresholds (3 amber), Taper/Race week tighten (1 amber), all others default (2 amber)
 - Structured modification output: trigger categories + adjustment directions (intensity/volume/cap_zone)
 - Wires into existing alerts (P0/P1 read tier-1 alarms, no duplication)
@@ -529,7 +537,7 @@ Before providing recommendations, AI systems must verify:
 | 5  | Missing-Data Handling            | If a metric is unavailable or outdated, explicitly request it from athlete. Never assume or project unseen values.                                     |
 | 6  | Temporal Data Validation         | Verify "last_updated" timestamp is <24 hours old. If data is >48 hours, request a refresh. Flag if athlete context (illness, travel) contradicts data. |               
 | 6b | UTC Time Synchronization         | Confirm dataset and system clocks align to UTC. Flag if offset >60 min or timestamps appear ahead of query time.                                       |
-| 7  | Multi-Metric Conflict Resolution | If HRV/RHR ≠ Feel/RPE, prioritize athlete-provided readiness. Note discrepancy, request clarification. Never override illness/fatigue with “good” TSB. |
+| 7  | Multi-Metric Conflict Resolution | If HRV/RHR conflict with athlete-reported state, prioritize athlete-provided readiness. Note discrepancy, request clarification. Never override illness/fatigue with “good” TSB. |
 | 8  | Recommendation Auditability      | Cite specific data points used. Include reasoning chain. State confidence: "High" (all data) / "Medium" (1–2 gaps) / "Low" (>2 gaps).                  |
 | 9  | Rolling Phase Alignment          | Identify current phase from TSB trend and ramp rate. Recommendations must align with phase logic. Flag contradictions.                                 |
 | 10 | Protocol Version & Framework Citations | State Section 11 version. Cite frameworks when applying logic (e.g., "Per Seiler 80/20 model..."). Include framework version (e.g., “URF v5.1”)  |                                        
@@ -720,7 +728,7 @@ Load-Recovery Ratio is a **secondary** overreach detector. It should only be eva
 
 1. **Primary:** Recovery Index (RI) — physiological readiness
 2. **Secondary:** Load-Recovery Ratio — load vs. recovery capacity
-3. **Tertiary:** Subjective markers (Feel, RPE) — athlete-reported state
+3. **Tertiary:** Subjective markers (RPE, athlete-reported state)
 
 If RI indicates good readiness (≥0.8) but Load-Recovery Ratio is elevated (≥2.5), flag for monitoring but do not auto-trigger deload unless RI also declines.
 
@@ -749,7 +757,7 @@ Monitor and respond to:
 |---------------|-----------------------------------|
 | HRV ↓ > 20%   | Easy day or deload consideration  |
 | RHR ↑ ≥ 5 bpm | Flag potential fatigue or illness |
-| Feel ≥ 4/5    | Adjust volume 30–40% for 3–4 days |
+| Feel ≥ 4/5 (wellness, if available)   | Adjust volume 30–40% for 3–4 days |
 
 **Recovery Index Formula:**
 ```
@@ -798,6 +806,18 @@ AI systems must only consider caloric-reduction or weight-optimization phases du
 
 Missing signals are classified as `unavailable` and excluded from amber/red counts.
 
+**Feel/RPE Override:**
+Athlete-reported state (wellness Feel, activity RPE, or direct communication) can adjust the readiness_decision in either direction:
+
+- **Escalate** (Go → Modify, Modify → Skip): Unconditional. If the athlete reports feeling worse than automated signals indicate, honor it. Safety-first.
+- **De-escalate** (Modify → Go): Permitted at P2 only, under these conditions:
+  - The athlete explicitly attributes signal deviation to non-training factors (e.g., sleep tracker error, caffeine, warm room)
+  - No more than 2 signals are amber. If 3+ signals agree on fatigue, the data outweighs subjective override — the athlete may be underreporting
+  - AI must note the override and the athlete's stated reason in the coaching note
+- **P0 and P1 are not overridable.** Safety stops and acute overload conditions reflect compounding physiological signals, not single-sensor noise.
+
+Athletes can underreport fatigue — through ego, denial, or simply poor interoception. When multiple objective signals converge on fatigue and Feel contradicts them, the AI should flag the disagreement and recommend caution rather than accept the de-escalation.
+
 **Phase Modifiers (shift P2 thresholds):**
 
 | Phase | Amber threshold | TSB amber shift | Red tightened | Rationale |
@@ -842,7 +862,7 @@ When recommendation is `modify`, the output includes trigger categories and adju
 **Recovery recommendations based on TSB alone are NOT warranted** unless accompanied by:
 - HRV ↓ > 20%
 - RHR ↑ ≥ 5 bpm
-- Feel ≥ 4/5
+- Feel ≥ 4/5 (wellness, if available)
 - Performance decline
 
 A negative TSB is the mechanism of adaptation, not a warning signal.
@@ -853,7 +873,7 @@ A negative TSB is the mechanism of adaptation, not a warning signal.
 
 In addition to recovery-based deload conditions, AI systems must detect readiness for safe workload, intensity, or interval progression ("green-light" criteria).
 
-#### Readiness Thresholds (All Must Be Met)
+#### Readiness Thresholds (All Available Must Be Met)
 
 | **Metric**            | **Threshold**                           |
 |-----------------------|-----------------------------------------|
@@ -862,7 +882,7 @@ In addition to recovery-based deload conditions, AI systems must detect readines
 | Recovery Index (RI)   | ≥ 0.85 (7-day rolling mean)             |
 | ACWR                  | Within 0.8–1.3                          |
 | Monotony              | < 2.5                                   |
-| Feel                  | ≤ 3/5 (no systemic fatigue)             |
+| Feel (if available)   | ≤ 3/5 (no systemic fatigue)             |
 
 ---
 
@@ -983,10 +1003,23 @@ It governs acute, session-level performance safety, ensuring localized overreach
 - Sleep Quality (1–4): Subjective quality rating (inverted scale: 1=Great, 4=Poor) — manual entry or auto-derived from device sleep score
 - Feel (1–5): Manual subjective entry (1=Strong, 2=Good, 3=Normal, 4=Poor, 5=Weak)
 
+**Feel/RPE exists at three levels — usage differs by layer:**
+
+| Layer | Source | When to use |
+|-------|--------|-------------|
+| Wellness Feel (1–5) | Daily wellness entry | Use when present in data. If absent: solicit only when other wellness signals are ambiguous and Feel would change the decision. |
+| Activity Feel/RPE | Per-activity rating (post-session) | Use when present in activity data. If absent: solicit after key sessions or when compliance assessment is borderline. |
+| In-session RPE | Real-time during workout | Athlete-volunteered mid-session. Drives bail-out and intensity adjustment rules (Section 9). |
+
+Feel/RPE is not wired into the automated readiness_decision pipeline. It enriches coaching decisions when available and is solicited when decision-relevant — never required as routine input.
+
 **Decision Logic:**
 - HRV ↓ > 20% vs baseline → Active recovery / easy spin
 - RHR ↑ ≥ 5 bpm vs baseline → Fatigue / illness flag
 - Sleep Quality = 4 → Reduce next-session intensity by 1 zone
+
+The following thresholds apply to wellness-level Feel. If Feel is present in the data, use it. If absent and other signals are ambiguous, solicit it. If absent and the picture is clear, do not ask.
+
 - Feel ≥ 4 → Treat as low readiness; monitor for compounding fatigue  
 - Feel ≥ 4 + 1 trigger (HRV, RHR, or Sleep deviation) → Insert 1–2 days of Z1-only training
 - 1 trigger persisting ≥2 days → Insert 1–2 days of Z1-only training
@@ -1307,7 +1340,7 @@ To ensure AI systems evaluate metrics in the correct order:
 │  • Recovery Index (RI)                                      │
 │  • HRV (vs baseline)                                        │
 │  • RHR (vs baseline)                                        │
-│  • Feel / RPE (subjective)                                  │
+│  • Sleep (quality + hours)                                  │
 │                                                             │
 │  → These determine GO / NO-GO for training                  │
 └─────────────────────────────────────────────────────────────┘

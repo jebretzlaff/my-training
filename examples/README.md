@@ -12,6 +12,7 @@ Working implementations for Section 11 integrations.
 | [json-manual](json-manual/) | Manual export from Mac/PC | ✅ Ready |
 | [reports](reports/) | Pre/post workout report templates | ✅ Ready |
 | [agentic](agentic/) | Write planned workouts to Intervals.icu calendar (code execution required) | ✅ Ready |
+| [workout-library](workout-library/) | Structured workout templates for AI prescription | ✅ Ready |
 
 ---
 
@@ -113,6 +114,9 @@ Pre-calculated values for Section 11 compliance — AI should use these, not cal
 | `seiler_tid_7d` / `seiler_tid_28d` | Seiler TID classification (Polarized/Pyramidal/Threshold/HIT/Base) |
 | `capability.durability` | Aggregate decoupling 7d/28d mean + trend (improving/stable/declining) |
 | `capability.tid_comparison` | TID drift detection (consistent/shifting/acute_depolarization) |
+| `readiness_decision` | Pre-computed go/modify/skip with priority ladder (P0–P3) and signal breakdown |
+| `capability.efficiency_factor` | Aerobic efficiency (power÷HR normalized) 7d/28d with trend |
+| `capability.hrrc` | Heart rate recovery 7d/28d aggregate trend (improving/stable/declining) |
 
 ---
 
@@ -122,8 +126,8 @@ The [reports/](reports/) folder contains Section 11-compliant templates:
 
 | Template | Use case |
 |----------|----------|
-| `PRE_WORKOUT_TEMPLATE.md` | Briefing before a session |
-| `POST_WORKOUT_TEMPLATE.md` | Analysis after a session |
+| `PRE_WORKOUT_REPORT_TEMPLATE.md` | Briefing before a session |
+| `POST_WORKOUT_REPORT_TEMPLATE.md` | Analysis after a session |
 | `*_EXAMPLES.md` | Anonymized examples showing normal and threshold-breach scenarios |
 
 Use these to standardize AI coaching output across platforms.

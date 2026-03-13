@@ -51,13 +51,13 @@ You can also follow the step-by-step guides below.
 
 Copy `DOSSIER_TEMPLATE.md` and fill in your athlete profile (age, weight, goals), equipment, current FTP/HR zones, training schedule, and nutrition protocol.
 
-### 2. Set Up Your Data Sync (Recommended)
+### 2. Set Up Your Data Sync
 
 Keep your Intervals.icu data fresh for your AI coach automatically.
 
 **[GitHub sync](examples/json-auto-sync/SETUP.md)** — GitHub Actions syncs every 15 minutes to a private repo. Your AI reads via GitHub connector or raw URL. Zero maintenance after setup.
 
-**[Local sync](examples/json-local-sync/SETUP.md)** — a script on a machine you control syncs your data on a timer. Your AI reads directly from the filesystem or via a cloud connector (Google Drive, OneDrive, etc.). No GitHub needed.
+**[Local sync](examples/json-local-sync/SETUP.md)** — a script on a machine you control syncs your data on a 60-second timer. Your AI reads directly from the filesystem or via a cloud connector (Google Drive, OneDrive, etc.). No GitHub needed.
 
 **[Manual export](examples/json-manual/SETUP.md)** — run once, upload the file. No automation.
 
@@ -194,7 +194,7 @@ Most major AI platforms now have native GitHub connectors that can access privat
 
 For AI platforms that can execute code, access the filesystem, and run shell commands. These platforms can read your JSON files directly (no web fetch needed), push planned workouts to your Intervals.icu calendar, and run sync.py locally.
 
-> **Recommended for agentic: [Local sync](examples/json-local-sync/SETUP.md).** sync.py runs on a timer, the agent reads files directly. Cheapest, fastest, most reliable. No GitHub needed.
+> **Recommended for agentic: [Local sync](examples/json-local-sync/SETUP.md).** sync.py runs on a 60-second timer, the agent reads files directly. Cheapest, fastest, most reliable. No GitHub needed.
 
 > **Alternative: GitHub sync.** A private repo with GitHub Actions gives you multi-device access and backup. Follow the per-platform instructions below.
 
