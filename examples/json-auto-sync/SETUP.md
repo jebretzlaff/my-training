@@ -88,6 +88,14 @@ Then add these files to your repository:
 
 If not set, defaults to `mon` (ISO week). This controls phase detection windows — ensures deload/build classification aligns with your actual training week structure.
 
+**Optional:** If you want HR zones used for aggregations in specific sports (e.g., running with auto-generated watch power):
+
+| Secret Name | Value |
+|-------------|-------|
+| `ZONE_PREFERENCE` | Per-sport zone override, e.g. `run:hr,cycling:power` |
+
+Only override what you need — unspecified sports default to power-preferred with HR fallback. Valid values per sport are `power` or `hr`. Sport families: `cycling`, `run`, `ski`, `rowing`, `swim`, `walk`, `strength`, `other`.
+
 **Note:** `GITHUB_TOKEN` is provided automatically by GitHub Actions.
 
 ---

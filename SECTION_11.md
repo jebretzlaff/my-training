@@ -1,10 +1,20 @@
 # Section 11 — AI Coach Protocol
 
-**Protocol Version:** 11.14  
-**Last Updated:** 2026-03-12
+**Protocol Version:** 11.15  
+**Last Updated:** 2026-03-14
 **License:** [MIT](https://opensource.org/licenses/MIT)
 
 ### Changelog
+
+**v11.15 — Per-Sport Zone Preference:**
+- `ZONE_PREFERENCE` config: per-sport override for which zone basis (power/HR) feeds aggregations
+- Format: `sport_family:basis` pairs, e.g. `run:hr,cycling:power`. Unspecified sports keep default (power-preferred, HR fallback)
+- Config cascade: `.sync_config.json` → `ZONE_PREFERENCE` env var → default. `--setup` wizard updated.
+- `zone_basis` field added to `zone_distribution_7d`, all `seiler_tid_*` blocks: `"power"` / `"hr"` / `"mixed"` / null
+- `zone_preference` field added to `READ_THIS_FIRST` — shows active config
+- `_aggregate_seiler_zones()` refactored to use shared `_get_activity_zones()` (eliminated duplicated zone extraction)
+- Per-activity zone output unchanged — still includes both `power_zones` and `hr_zones`
+- sync.py v3.83
 
 **v11.14 — Feel/RPE Scope Clarification:**
 - Feel removed from automated readiness_decision signals — 6 signals remain (HRV, RHR, Sleep, TSB, ACWR, RI)
@@ -479,6 +489,20 @@ The `capability.tid_comparison` object compares these windows to detect distribu
 - `shifting` → Note in weekly report; investigate if sustained >2 weeks
 - `acute_depolarization` → Flag in pre-workout and weekly reports; likely indicates fatigue shifting distribution toward grey zone
 - TID drift is a **Tier 3 diagnostic** — it informs coaching context, not go/no-go decisions
+
+#### Zone Preference Configuration
+
+Zone aggregations (TID, polarization index, grey zone %, quality intensity %, hard day detection) default to **power zones preferred, HR zones as fallback** per activity. The `ZONE_PREFERENCE` config overrides this per sport family.
+
+**Format:** `sport_family:basis` pairs, comma-separated. Example: `run:hr,cycling:power`.
+
+When configured, the aggregation layer prefers the specified zone basis for that sport family, falling back to the other if the preferred basis is unavailable. Unspecified sport families retain the default (power-preferred).
+
+**Output fields:**
+- `zone_preference` in `READ_THIS_FIRST` — shows the active configuration (empty dict = default)
+- `zone_basis` on `zone_distribution_7d`, `seiler_tid_7d`, `seiler_tid_7d_primary`, `seiler_tid_28d`, `seiler_tid_28d_primary` — `"power"`, `"hr"`, or `"mixed"` (when activities in the aggregation used different bases)
+
+**AI coaching rule:** When `zone_basis` is not `"power"` (the default), note the basis in reports so the athlete understands which zones drove the analysis. Per-activity zone distributions in `recent_activities` still output both power and HR zones regardless of this setting.
 
 ---
 
@@ -1858,6 +1882,7 @@ This subsection defines the formal self-validation and audit metadata structure 
 | `w_prime_confidence`           | string   | Confidence level of W′ estimates ("high" / "medium" / "low" / "unavailable")        |
 | `seiler_tid_7d`                | string   | Seiler TID classification for 7-day window (Polarized/Pyramidal/Threshold/etc.) |
 | `seiler_tid_28d`               | string   | Seiler TID classification for 28-day window                                     |
+| `zone_basis`                   | string/null | Zone basis used for aggregation: `"power"`, `"hr"`, or `"mixed"`. Present on `zone_distribution_7d`, all `seiler_tid_*` blocks. Null when no zone data available. Reflects `ZONE_PREFERENCE` config. |
 | `tid_drift`                    | string   | TID drift category: "consistent" / "shifting" / "acute_depolarization"          |
 | `durability_7d_mean`           | number   | Mean HR–Power decoupling (%) from qualifying steady-state sessions, 7-day       |
 | `durability_28d_mean`          | number   | Mean HR–Power decoupling (%) from qualifying steady-state sessions, 28-day      |

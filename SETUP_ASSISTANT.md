@@ -157,6 +157,14 @@ Walk them through:
 
 If not set, defaults to `mon` (ISO week). This controls phase detection windows — ensures deload/build classification aligns with the athlete's actual training week structure.
 
+**Optional:** If they want HR zones used for aggregations in specific sports (e.g., runners with auto-generated watch power who prefer HR-based analysis):
+
+| Name | Value |
+|------|-------|
+| `ZONE_PREFERENCE` | Per-sport zone override, e.g. `run:hr,cycling:power` |
+
+Only override what's needed — unspecified sports default to power-preferred with HR fallback.
+
 Confirm both required secrets are added before continuing.
 
 ### Step 5: Enable workflow permissions

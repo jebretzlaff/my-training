@@ -435,6 +435,10 @@ tail -f ~/training-data/sync.log
 
 **`.sync_config.json` must be in the working directory** — the data directory root (`~/training-data/`), not inside `section11/`. If sync.py can't find credentials, check that your timer's `WorkingDirectory` is set correctly.
 
+**Optional config fields** (add manually to `.sync_config.json` or re-run `--setup`):
+- `week_start` — training week start day (`mon`–`sun`, default: `mon`)
+- `zone_preference` — per-sport zone override for aggregations, e.g. `"run:hr,cycling:power"`. Only override what you need; unspecified sports default to power-preferred with HR fallback.
+
 **Permissions** — the timer runs as your user. Ensure the output directory is writable.
 
 **history.json regeneration** — the first run after a long gap may take longer than usual (up to 30 seconds for 3 years of data). Use `--lockfile` to prevent overlap during regeneration.
