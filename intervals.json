@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-29T22:03:42.948454",
+  "generated_at": "2026-03-29T23:50:27.150141",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -223,6 +223,25 @@
           "zone": 1,
           "training_load": 30.32295,
           "decoupling": 12.853046
+        }
+      ]
+    },
+    {
+      "activity_id": "i135786768",
+      "date": "2026-03-29",
+      "type": "Ride",
+      "name": "Hype gravel",
+      "interval_summary": [
+        "1x 4h 141bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "14435s@141bpm",
+          "duration_secs": 14435,
+          "avg_hr": 141,
+          "max_hr": 175,
+          "zone": 1
         }
       ]
     }
