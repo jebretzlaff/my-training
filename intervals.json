@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-31T23:02:27.416101",
+  "generated_at": "2026-04-01T06:04:11.295240",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -241,6 +241,25 @@
           "duration_secs": 14435,
           "avg_hr": 141,
           "max_hr": 175,
+          "zone": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "i136326863",
+      "date": "2026-03-31",
+      "type": "Ride",
+      "name": "On the wandrer grind",
+      "interval_summary": [
+        "1x 1h52m 135bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "6756s@135bpm",
+          "duration_secs": 6756,
+          "avg_hr": 135,
+          "max_hr": 167,
           "zone": 1
         }
       ]
