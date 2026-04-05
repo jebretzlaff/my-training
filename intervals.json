@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-05T00:02:37.802684",
+  "generated_at": "2026-04-05T05:57:47.411212",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -39,6 +39,79 @@
           "avg_hr": 135,
           "max_hr": 167,
           "zone": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "i137272424",
+      "date": "2026-04-04",
+      "type": "VirtualRide",
+      "name": "Zwift - Spiral into the Volcano in Watopia",
+      "interval_summary": [
+        "2x 5m1s 249w"
+      ],
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 3666,
+          "avg_power": 175,
+          "max_power": 356,
+          "avg_hr": 135,
+          "max_hr": 154,
+          "avg_cadence": 87.25264,
+          "zone": 2,
+          "training_load": 35.80084,
+          "decoupling": -3.2215543
+        },
+        {
+          "type": "WORK",
+          "label": "301s@249w88rpm",
+          "duration_secs": 305,
+          "avg_power": 249,
+          "max_power": 358,
+          "avg_hr": 158,
+          "max_hr": 164,
+          "avg_cadence": 86.49836,
+          "zone": 3,
+          "training_load": 5.667315,
+          "decoupling": 4.286566
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 300,
+          "avg_power": 152,
+          "max_power": 296,
+          "avg_hr": 136,
+          "max_hr": 161,
+          "avg_cadence": 91.85333,
+          "zone": 1,
+          "training_load": 2.3684084,
+          "decoupling": -20.274033
+        },
+        {
+          "type": "WORK",
+          "label": "301s@249w88rpm",
+          "duration_secs": 297,
+          "avg_power": 249,
+          "max_power": 340,
+          "avg_hr": 157,
+          "max_hr": 164,
+          "avg_cadence": 89.62626,
+          "zone": 3,
+          "training_load": 5.474069,
+          "decoupling": 2.9846013
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 2744,
+          "avg_power": 177,
+          "max_power": 298,
+          "avg_hr": 141,
+          "max_hr": 160,
+          "avg_cadence": 90.216835,
+          "zone": 2,
+          "training_load": 29.538158,
+          "decoupling": 16.315613
         }
       ]
     }
