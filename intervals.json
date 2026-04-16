@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T00:02:09.284338",
+  "generated_at": "2026-04-16T06:24:31.671588",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -103,6 +103,52 @@
           "zone": 1,
           "training_load": 13.190781,
           "decoupling": -0.7546766
+        }
+      ]
+    },
+    {
+      "activity_id": "i140219981",
+      "date": "2026-04-15",
+      "type": "Ride",
+      "name": "Allez! Allez!",
+      "interval_summary": [
+        "1x 38m30s 140bpm",
+        "1x 1m57s 188bpm",
+        "1x 1h1m 142bpm",
+        "1x 21m26s 136bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "2310s@140bpm",
+          "duration_secs": 2310,
+          "avg_hr": 140,
+          "max_hr": 184,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "117s@188bpm",
+          "duration_secs": 117,
+          "avg_hr": 188,
+          "max_hr": 197,
+          "zone": 5
+        },
+        {
+          "type": "WORK",
+          "label": "3695s@142bpm",
+          "duration_secs": 3695,
+          "avg_hr": 142,
+          "max_hr": 186,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "1286s@136bpm",
+          "duration_secs": 1286,
+          "avg_hr": 136,
+          "max_hr": 164,
+          "zone": 1
         }
       ]
     }
