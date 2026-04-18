@@ -1,63 +1,9 @@
 {
-  "generated_at": "2026-04-17T22:08:15.148467",
+  "generated_at": "2026-04-18T00:04:13.151794",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i138545645",
-      "date": "2026-04-09",
-      "type": "Ride",
-      "name": "Grabble ride but it\u2019s actually mostly paved",
-      "interval_summary": [
-        "1x 30m1s 152bpm",
-        "2x 15m 179bpm",
-        "1x 8m1s 146bpm",
-        "1x 1h13m 139bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "1801s@152bpm",
-          "duration_secs": 1801,
-          "avg_hr": 152,
-          "max_hr": 180,
-          "zone": 2
-        },
-        {
-          "type": "WORK",
-          "label": "900s@179bpm",
-          "duration_secs": 900,
-          "avg_hr": 180,
-          "max_hr": 186,
-          "zone": 4
-        },
-        {
-          "type": "WORK",
-          "label": "481s@146bpm",
-          "duration_secs": 481,
-          "avg_hr": 146,
-          "max_hr": 180,
-          "zone": 1
-        },
-        {
-          "type": "WORK",
-          "label": "900s@179bpm",
-          "duration_secs": 899,
-          "avg_hr": 178,
-          "max_hr": 188,
-          "zone": 4
-        },
-        {
-          "type": "WORK",
-          "label": "4433s@139bpm",
-          "duration_secs": 4433,
-          "avg_hr": 139,
-          "max_hr": 180,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i139907777",
       "date": "2026-04-14",
