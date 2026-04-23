@@ -1,57 +1,9 @@
 {
-  "generated_at": "2026-04-22T22:33:38.737735",
+  "generated_at": "2026-04-23T06:18:13.641448",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i139907777",
-      "date": "2026-04-14",
-      "type": "VirtualRide",
-      "name": "Zwift - VO2 Peak Pursuit",
-      "interval_summary": [
-        "1x 19s 730w"
-      ],
-      "intervals": [
-        {
-          "type": "RECOVERY",
-          "duration_secs": 6224,
-          "avg_power": 162,
-          "max_power": 632,
-          "avg_hr": 133,
-          "max_hr": 157,
-          "avg_cadence": 80.53987,
-          "zone": 1,
-          "training_load": 53.965073,
-          "decoupling": 1.0780059
-        },
-        {
-          "type": "WORK",
-          "label": "19s@730w106rpm",
-          "duration_secs": 19,
-          "avg_power": 730,
-          "max_power": 918,
-          "avg_hr": 176,
-          "max_hr": 189,
-          "avg_cadence": 105.947365,
-          "zone": 7,
-          "training_load": 1.4816248,
-          "decoupling": 19.509693
-        },
-        {
-          "type": "RECOVERY",
-          "duration_secs": 1072,
-          "avg_power": 118,
-          "max_power": 590,
-          "avg_hr": 126,
-          "max_hr": 189,
-          "avg_cadence": 83.25,
-          "zone": 1,
-          "training_load": 13.190781,
-          "decoupling": -0.7546766
-        }
-      ]
-    },
     {
       "activity_id": "i140219981",
       "date": "2026-04-15",
