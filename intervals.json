@@ -1,72 +1,9 @@
 {
-  "generated_at": "2026-04-24T23:54:01.664914",
+  "generated_at": "2026-04-25T01:09:57.741216",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i140502407",
-      "date": "2026-04-16",
-      "type": "Ride",
-      "name": "Gorgeous night",
-      "interval_summary": [
-        "2x 37m16s 153bpm",
-        "1x 8m48s 191bpm",
-        "1x 15m26s 152bpm",
-        "1x 13m29s 178bpm",
-        "1x 19m26s 153bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "2236s@153bpm",
-          "duration_secs": 2191,
-          "avg_hr": 153,
-          "max_hr": 187,
-          "zone": 2
-        },
-        {
-          "type": "WORK",
-          "label": "528s@191bpm",
-          "duration_secs": 528,
-          "avg_hr": 191,
-          "max_hr": 200,
-          "zone": 6
-        },
-        {
-          "type": "WORK",
-          "label": "926s@152bpm",
-          "duration_secs": 926,
-          "avg_hr": 152,
-          "max_hr": 184,
-          "zone": 2
-        },
-        {
-          "type": "WORK",
-          "label": "809s@178bpm",
-          "duration_secs": 809,
-          "avg_hr": 178,
-          "max_hr": 188,
-          "zone": 4
-        },
-        {
-          "type": "WORK",
-          "label": "1166s@153bpm",
-          "duration_secs": 1166,
-          "avg_hr": 153,
-          "max_hr": 170,
-          "zone": 2
-        },
-        {
-          "type": "WORK",
-          "label": "2236s@153bpm",
-          "duration_secs": 2281,
-          "avg_hr": 153,
-          "max_hr": 178,
-          "zone": 2
-        }
-      ]
-    },
     {
       "activity_id": "i140720036",
       "date": "2026-04-17",
