@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-04-25T23:52:17.171498",
+  "generated_at": "2026-04-26T01:18:23.360308",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i140720036",
-      "date": "2026-04-17",
-      "type": "Ride",
-      "name": "Recent study shows a whopping 93% of cyclists would rather be struck by lightning than ride the trainer in April",
-      "interval_summary": [
-        "1x 44m10s 138bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "2650s@138bpm",
-          "duration_secs": 2650,
-          "avg_hr": 138,
-          "max_hr": 168,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i140979051",
       "date": "2026-04-18",
