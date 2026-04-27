@@ -1,46 +1,9 @@
 {
-  "generated_at": "2026-04-26T23:59:59.553720",
+  "generated_at": "2026-04-27T02:46:58.895444",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i140979051",
-      "date": "2026-04-18",
-      "type": "Ride",
-      "name": "Diabolically windy day",
-      "interval_summary": [
-        "1x 3h25m 149bpm",
-        "1x 8m54s 180bpm",
-        "1x 16m37s 145bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "12324s@149bpm",
-          "duration_secs": 12324,
-          "avg_hr": 149,
-          "max_hr": 185,
-          "zone": 1
-        },
-        {
-          "type": "WORK",
-          "label": "534s@180bpm",
-          "duration_secs": 534,
-          "avg_hr": 180,
-          "max_hr": 188,
-          "zone": 4
-        },
-        {
-          "type": "WORK",
-          "label": "997s@145bpm",
-          "duration_secs": 997,
-          "avg_hr": 145,
-          "max_hr": 181,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i141280723",
       "date": "2026-04-19",
