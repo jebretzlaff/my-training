@@ -1,57 +1,9 @@
 {
-  "generated_at": "2026-04-28T23:14:35.906038",
+  "generated_at": "2026-04-29T00:06:51.655200",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i141592629",
-      "date": "2026-04-20",
-      "type": "Ride",
-      "name": "Cycling",
-      "interval_summary": [
-        "1x 3m13s 251w"
-      ],
-      "intervals": [
-        {
-          "type": "RECOVERY",
-          "duration_secs": 310,
-          "avg_power": 145,
-          "max_power": 499,
-          "avg_hr": 122,
-          "max_hr": 145,
-          "avg_cadence": 75.18123,
-          "zone": 1,
-          "training_load": 2.2868323,
-          "decoupling": -7.568034
-        },
-        {
-          "type": "WORK",
-          "label": "193s@251w73rpm",
-          "duration_secs": 193,
-          "avg_power": 251,
-          "max_power": 326,
-          "avg_hr": 156,
-          "max_hr": 163,
-          "avg_cadence": 72.61658,
-          "zone": 3,
-          "training_load": 3.7032955,
-          "decoupling": 3.628798
-        },
-        {
-          "type": "RECOVERY",
-          "duration_secs": 6690,
-          "avg_power": 167,
-          "max_power": 578,
-          "avg_hr": 130,
-          "max_hr": 160,
-          "avg_cadence": 82.47441,
-          "zone": 2,
-          "training_load": 68.23574,
-          "decoupling": -2.6655552
-        }
-      ]
-    },
     {
       "activity_id": "i141889839",
       "date": "2026-04-21",
@@ -507,6 +459,25 @@
           "zone": 2,
           "training_load": 4.0709295,
           "decoupling": 12.25361
+        }
+      ]
+    },
+    {
+      "activity_id": "i143886551",
+      "date": "2026-04-28",
+      "type": "Ride",
+      "name": "Finally mountain biking!!!",
+      "interval_summary": [
+        "1x 1h52m 148bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "6726s@148bpm",
+          "duration_secs": 6726,
+          "avg_hr": 148,
+          "max_hr": 181,
+          "zone": 1
         }
       ]
     }
