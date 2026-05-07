@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-05-06T23:12:04.432085",
+  "generated_at": "2026-05-07T00:02:01.716247",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i143886551",
-      "date": "2026-04-28",
-      "type": "Ride",
-      "name": "Finally mountain biking!!!",
-      "interval_summary": [
-        "1x 1h52m 148bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "6726s@148bpm",
-          "duration_secs": 6726,
-          "avg_hr": 148,
-          "max_hr": 181,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i144198692",
       "date": "2026-04-29",
@@ -1003,6 +984,25 @@
           "duration_secs": 3660,
           "avg_hr": 128,
           "max_hr": 150,
+          "zone": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "i146061173",
+      "date": "2026-05-06",
+      "type": "Ride",
+      "name": "Cycling",
+      "interval_summary": [
+        "1x 2h1m 144bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "7287s@144bpm",
+          "duration_secs": 7287,
+          "avg_hr": 144,
+          "max_hr": 177,
           "zone": 1
         }
       ]
