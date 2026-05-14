@@ -1,37 +1,9 @@
 {
-  "generated_at": "2026-05-13T23:39:20.274198",
+  "generated_at": "2026-05-14T01:30:32.562887",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i145782416",
-      "date": "2026-05-05",
-      "type": "Ride",
-      "name": "Ringle with Jack then ride home",
-      "interval_summary": [
-        "1x 1h16m 131bpm",
-        "1x 1h1m 128bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "4563s@131bpm",
-          "duration_secs": 4563,
-          "avg_hr": 131,
-          "max_hr": 168,
-          "zone": 1
-        },
-        {
-          "type": "WORK",
-          "label": "3660s@128bpm",
-          "duration_secs": 3660,
-          "avg_hr": 128,
-          "max_hr": 150,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i146061173",
       "date": "2026-05-06",
