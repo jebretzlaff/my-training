@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-05-18T23:35:22.546826",
+  "generated_at": "2026-05-19T01:32:26.550861",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i147062987",
-      "date": "2026-05-10",
-      "type": "Ride",
-      "name": "WORS Englewood Open p5 Elite U30",
-      "interval_summary": [
-        "1x 1h37m 182bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "5859s@182bpm",
-          "duration_secs": 5859,
-          "avg_hr": 182,
-          "max_hr": 200,
-          "zone": 4
-        }
-      ]
-    },
     {
       "activity_id": "i147693081",
       "date": "2026-05-12",
