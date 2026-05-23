@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T01:26:01.276577",
+  "generated_at": "2026-05-23T04:54:57.881701",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -140,6 +140,71 @@
           "zone": 1,
           "training_load": 12.600578,
           "decoupling": -6.666113
+        }
+      ]
+    },
+    {
+      "activity_id": "i150697341",
+      "date": "2026-05-22",
+      "type": "Ride",
+      "name": "Twilight pre ride/ openers",
+      "interval_summary": [
+        "1x 36m12s 153bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "2172s@153bpm",
+          "duration_secs": 2172,
+          "avg_hr": 153,
+          "max_hr": 190,
+          "zone": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "i150697377",
+      "date": "2026-05-20",
+      "type": "Ride",
+      "name": "Afternoon Ride",
+      "interval_summary": [
+        "1x 3m33s 252w"
+      ],
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 206,
+          "avg_power": 113,
+          "max_power": 806,
+          "avg_hr": 111,
+          "max_hr": 135,
+          "avg_cadence": 64.71359,
+          "zone": 1,
+          "decoupling": 23.370462
+        },
+        {
+          "type": "WORK",
+          "label": "213s@252w63rpm",
+          "duration_secs": 213,
+          "avg_power": 252,
+          "max_power": 332,
+          "avg_hr": 152,
+          "max_hr": 161,
+          "avg_cadence": 62.94366,
+          "zone": 3,
+          "decoupling": 8.330515
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 6677,
+          "avg_power": 160,
+          "max_power": 461,
+          "avg_hr": 132,
+          "max_hr": 168,
+          "avg_cadence": 82.38917,
+          "zone": 1,
+          "training_load": 55.28736,
+          "decoupling": 9.497799
         }
       ]
     }
