@@ -70,7 +70,7 @@
   },
   "metadata": {
     "athlete_id": "REDACTED",
-    "last_updated": "2026-05-24T20:40:16.577226",
+    "last_updated": "2026-05-24T21:36:12.872289",
     "data_range_days": 7,
     "extended_range_days": 28,
     "version": "3.92"
@@ -597,7 +597,7 @@
     "p_max": 1376,
     "power_model_source": "wellness.sportInfo",
     "vo2max": null,
-    "calculation_timestamp": "2026-05-24T20:40:16.357823",
+    "calculation_timestamp": "2026-05-24T21:36:12.870890",
     "data_quality": {
       "hrv_data_points": 0,
       "rhr_data_points": 4,
@@ -654,7 +654,8 @@
           "z7_time": 0
         }
       },
-      "has_intervals": true
+      "has_intervals": true,
+      "description": "\u200d4.5 hr race yesterday + 80 degrees = quite lackluster showing\ud83d\udc4d\n\nSweet course tho and another fun WORS camping weekend!\n0.77 new miles\n\n-- From Wandrer"
     },
     {
       "id": "i150882918",
