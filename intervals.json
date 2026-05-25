@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-25T13:49:21.000261",
+  "generated_at": "2026-05-25T16:12:50.889771",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -956,6 +956,25 @@
           "avg_hr": 168,
           "max_hr": 192,
           "zone": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "i151388935",
+      "date": "2026-05-25",
+      "type": "Ride",
+      "name": "Battle Creek trails with the Harris\u2019!!",
+      "interval_summary": [
+        "1x 1h46m 114bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "6417s@114bpm",
+          "duration_secs": 6417,
+          "avg_hr": 114,
+          "max_hr": 186,
+          "zone": 1
         }
       ]
     }
