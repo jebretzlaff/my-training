@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T19:43:42.442030",
+  "generated_at": "2026-05-29T21:27:04.539102",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -808,6 +808,25 @@
           "duration_secs": 10879,
           "avg_hr": 147,
           "max_hr": 191,
+          "zone": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "i152589817",
+      "date": "2026-05-29",
+      "type": "Ride",
+      "name": "Sylvan",
+      "interval_summary": [
+        "1x 51m37s 136bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "3097s@136bpm",
+          "duration_secs": 3097,
+          "avg_hr": 136,
+          "max_hr": 168,
           "zone": 1
         }
       ]
