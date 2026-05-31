@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-05-30T23:41:40.428817",
+  "generated_at": "2026-05-31T01:50:24.236380",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i150697341",
-      "date": "2026-05-22",
-      "type": "Ride",
-      "name": "Twilight pre ride/ openers",
-      "interval_summary": [
-        "1x 36m12s 153bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "2172s@153bpm",
-          "duration_secs": 2172,
-          "avg_hr": 153,
-          "max_hr": 190,
-          "zone": 2
-        }
-      ]
-    },
     {
       "activity_id": "i150882918",
       "date": "2026-05-23",
