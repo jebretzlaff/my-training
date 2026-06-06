@@ -70,7 +70,7 @@
   },
   "metadata": {
     "athlete_id": "REDACTED",
-    "last_updated": "2026-06-06T19:10:23.323076",
+    "last_updated": "2026-06-06T20:19:50.463478",
     "data_range_days": 7,
     "extended_range_days": 28,
     "version": "3.92"
@@ -629,7 +629,7 @@
     "p_max": 1366,
     "power_model_source": "wellness.sportInfo",
     "vo2max": null,
-    "calculation_timestamp": "2026-06-06T19:10:23.162004",
+    "calculation_timestamp": "2026-06-06T20:19:50.462345",
     "data_quality": {
       "hrv_data_points": 0,
       "rhr_data_points": 7,
@@ -686,7 +686,8 @@
           "z7_time": 38
         }
       },
-      "has_intervals": true
+      "has_intervals": true,
+      "description": "Siiiiiick race!! Lost a couple positions on the last climb but this was the best I\u2019ve paced an endurance race, ever. Super stoked on the training paying off this year!\n\nTomorrow\u2019s gonna hurt to go again"
     },
     {
       "id": "i154690176",
