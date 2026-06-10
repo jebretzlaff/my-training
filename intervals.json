@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T22:45:33.336591",
+  "generated_at": "2026-06-10T00:02:28.538591",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -897,6 +897,25 @@
           "zone": 2,
           "training_load": 2.4978344,
           "decoupling": 20.075457
+        }
+      ]
+    },
+    {
+      "activity_id": "i155908572",
+      "date": "2026-06-09",
+      "type": "Ride",
+      "name": "WORS laps at nine-mile",
+      "interval_summary": [
+        "1x 2h1m 132bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "7262s@132bpm",
+          "duration_secs": 7262,
+          "avg_hr": 132,
+          "max_hr": 175,
+          "zone": 1
         }
       ]
     }
