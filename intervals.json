@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T20:13:18.748085",
+  "generated_at": "2026-06-14T21:37:41.666794",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -935,6 +935,25 @@
           "avg_hr": 158,
           "max_hr": 199,
           "zone": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "i157313919",
+      "date": "2026-06-14",
+      "type": "Ride",
+      "name": "WORS #4 Basecamp Bike Fest 6th OA, 5th AG",
+      "interval_summary": [
+        "1x 1h47m 179bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "6460s@179bpm",
+          "duration_secs": 6460,
+          "avg_hr": 179,
+          "max_hr": 198,
+          "zone": 4
         }
       ]
     }
