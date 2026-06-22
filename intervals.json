@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-06-21T23:42:00.156912",
+  "generated_at": "2026-06-22T02:07:02.751253",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i157062921",
-      "date": "2026-06-13",
-      "type": "Ride",
-      "name": "WORS Short Track from home",
-      "interval_summary": [
-        "1x 1h56m 158bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "6972s@158bpm",
-          "duration_secs": 6972,
-          "avg_hr": 158,
-          "max_hr": 199,
-          "zone": 2
-        }
-      ]
-    },
     {
       "activity_id": "i157313919",
       "date": "2026-06-14",
