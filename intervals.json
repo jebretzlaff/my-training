@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-06-22T23:46:49.515798",
+  "generated_at": "2026-06-23T01:53:05.193926",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i157313919",
-      "date": "2026-06-14",
-      "type": "Ride",
-      "name": "WORS #4 Basecamp Bike Fest 6th OA, 5th AG",
-      "interval_summary": [
-        "1x 1h47m 179bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "6460s@179bpm",
-          "duration_secs": 6460,
-          "avg_hr": 179,
-          "max_hr": 198,
-          "zone": 4
-        }
-      ]
-    },
     {
       "activity_id": "i158487803",
       "date": "2026-06-18",
@@ -344,6 +325,54 @@
           "avg_cadence": 71.68634,
           "zone": 1,
           "training_load": 18.02658
+        }
+      ]
+    },
+    {
+      "activity_id": "i159540581",
+      "date": "2026-06-22",
+      "type": "Ride",
+      "name": "Cycling",
+      "interval_summary": [
+        "1x 3m35s 247w"
+      ],
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 1178,
+          "avg_power": 155,
+          "max_power": 440,
+          "avg_hr": 127,
+          "max_hr": 156,
+          "avg_cadence": 78.6831,
+          "zone": 1,
+          "training_load": 8.84814,
+          "decoupling": 3.3046157
+        },
+        {
+          "type": "WORK",
+          "label": "215s@247w59rpm",
+          "duration_secs": 215,
+          "avg_power": 247,
+          "max_power": 314,
+          "avg_hr": 158,
+          "max_hr": 167,
+          "avg_cadence": 59.190697,
+          "zone": 3,
+          "training_load": 3.866648,
+          "decoupling": -0.84982914
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 5845,
+          "avg_power": 170,
+          "max_power": 703,
+          "avg_hr": 137,
+          "max_hr": 164,
+          "avg_cadence": 82.68071,
+          "zone": 2,
+          "training_load": 61.387505,
+          "decoupling": 2.5550134
         }
       ]
     }
