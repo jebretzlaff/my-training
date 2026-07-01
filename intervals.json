@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T02:01:07.088268",
+  "generated_at": "2026-07-01T06:42:48.913504",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -175,6 +175,25 @@
           "zone": 2,
           "training_load": 17.12201,
           "decoupling": 3.2875204
+        }
+      ]
+    },
+    {
+      "activity_id": "i161653069",
+      "date": "2026-06-30",
+      "type": "Ride",
+      "name": "Wausau Wheelers group ride then pulling dad into Wausau",
+      "interval_summary": [
+        "1x 4h3m 148bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "14626s@148bpm",
+          "duration_secs": 14626,
+          "avg_hr": 148,
+          "max_hr": 197,
+          "zone": 1
         }
       ]
     }
