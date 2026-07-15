@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-07-14T23:23:04.474209",
+  "generated_at": "2026-07-15T00:10:09.351880",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i163373559",
-      "date": "2026-07-06",
-      "type": "Ride",
-      "name": "Post work Nine-MileSS",
-      "interval_summary": [
-        "1x 1h25m 122bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "5116s@122bpm",
-          "duration_secs": 5116,
-          "avg_hr": 122,
-          "max_hr": 151,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i163723596",
       "date": "2026-07-07",
