@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-07-15T23:37:21.724799",
+  "generated_at": "2026-07-16T01:04:30.368211",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i163723596",
-      "date": "2026-07-07",
-      "type": "Ride",
-      "name": "Wausau Wheelers!",
-      "interval_summary": [
-        "1x 3h35m 146bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "12913s@146bpm",
-          "duration_secs": 12913,
-          "avg_hr": 146,
-          "max_hr": 205,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i164598815",
       "date": "2026-07-10",
