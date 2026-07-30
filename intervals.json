@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T22:43:41.429178",
+  "generated_at": "2026-07-30T23:40:48.629335",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -87,6 +87,25 @@
           "zone": 1,
           "training_load": 16.000235,
           "decoupling": -7.282669
+        }
+      ]
+    },
+    {
+      "activity_id": "i170954473",
+      "date": "2026-07-30",
+      "type": "Ride",
+      "name": "EZ nine mile",
+      "interval_summary": [
+        "1x 48m35s 142bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "2915s@142bpm",
+          "duration_secs": 2915,
+          "avg_hr": 142,
+          "max_hr": 168,
+          "zone": 1
         }
       ]
     }
