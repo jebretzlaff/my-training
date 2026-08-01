@@ -70,7 +70,7 @@
   },
   "metadata": {
     "athlete_id": "REDACTED",
-    "last_updated": "2026-08-01T22:15:09.805641",
+    "last_updated": "2026-08-01T23:14:23.265784",
     "data_range_days": 7,
     "extended_range_days": 28,
     "version": "3.92"
@@ -605,7 +605,7 @@
     "p_max": 1326,
     "power_model_source": "wellness.sportInfo",
     "vo2max": null,
-    "calculation_timestamp": "2026-08-01T22:15:09.804431",
+    "calculation_timestamp": "2026-08-01T23:14:23.264564",
     "data_quality": {
       "hrv_data_points": 0,
       "rhr_data_points": 2,
@@ -671,7 +671,8 @@
           "z7_time": 102
         }
       },
-      "has_intervals": true
+      "has_intervals": true,
+      "description": "\u200dmost unhinged race of my career for sure\u2026 midnight start (tried to sleep, couldn\u2019t), muddy as heck from 3in rain. Gravel was soooooo sloppy and slow until about mile 150\ud83d\ude35\u200d\ud83d\udcab did some cruising with good groups but eventually was feeling it pretty good at hour 6. Did some good work with a couple guys as the race went on and apparently just kept moving up the rankings as people quit\ud83d\ude02 truly a war of attrition out there. caffeine pills saved the heavy eyelids at 4am, pulls on the honey bear saved the bonk, Elijah came thru on sag\ud83e\udd79\n\np16 (?) out of almost 500 starters, p2 (?) U23\n\n\ud83c\udfb7\ud83d\udc1b 243.65 new miles\n\n-- From Wandrer"
     },
     {
       "id": "i170954473",
