@@ -70,7 +70,7 @@
   },
   "metadata": {
     "athlete_id": "REDACTED",
-    "last_updated": "2026-08-02T00:08:10.491709",
+    "last_updated": "2026-08-02T03:47:56.692454",
     "data_range_days": 7,
     "extended_range_days": 28,
     "version": "3.92"
@@ -156,10 +156,10 @@
   },
   "current_status": {
     "fitness": {
-      "ctl": 63.54,
-      "atl": 96.52,
-      "tsb": -32.98,
-      "ramp_rate": 11.13,
+      "ctl": 63.91,
+      "atl": 107.03,
+      "tsb": -43.12,
+      "ramp_rate": 11.5,
       "fitness_source": "From Intervals.icu API (reflects completed workouts)"
     },
     "thresholds": {
@@ -552,7 +552,7 @@
       ],
       "basis": {
         "stream_1": {
-          "ctl_slope": 0.55,
+          "ctl_slope": 0.65,
           "acwr_trend": "rising",
           "hard_day_pattern": 1.8,
           "weeks_available": 5
@@ -599,7 +599,7 @@
     "p_max": 1326,
     "power_model_source": "wellness.sportInfo",
     "vo2max": null,
-    "calculation_timestamp": "2026-08-02T00:08:10.490569",
+    "calculation_timestamp": "2026-08-02T03:47:56.691255",
     "data_quality": {
       "hrv_data_points": 0,
       "rhr_data_points": 1,
@@ -615,7 +615,7 @@
   "recent_activities": [
     {
       "id": "i171544261",
-      "date": "2026-07-31T23:59:20",
+      "date": "2026-08-01T00:00:00",
       "type": "Ride",
       "name": "Training Session",
       "duration_hours": 15.43,
@@ -636,7 +636,7 @@
       "wind_speed": null,
       "work_kj": 10042.6,
       "calories": 9953,
-      "carbs_used": 2051,
+      "carbs_used": 2061,
       "carbs_ingested": null,
       "variability_index": 1.1104972,
       "decoupling": 14.356008,
