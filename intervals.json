@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-08-02T23:37:13.979783",
+  "generated_at": "2026-08-03T01:11:49.666378",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i169191126",
-      "date": "2026-07-25",
-      "type": "Ride",
-      "name": "RAMBA with Isaac!!",
-      "interval_summary": [
-        "1x 4h41m 152bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "16898s@152bpm",
-          "duration_secs": 16898,
-          "avg_hr": 152,
-          "max_hr": 189,
-          "zone": 2
-        }
-      ]
-    },
     {
       "activity_id": "i169438827",
       "date": "2026-07-26",
