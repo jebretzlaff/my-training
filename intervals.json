@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-08-03T23:55:47.141386",
+  "generated_at": "2026-08-04T01:17:30.457118",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i169438827",
-      "date": "2026-07-26",
-      "type": "Ride",
-      "name": "South trails best of with Isaac",
-      "interval_summary": [
-        "1x 2h43m 136bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "9831s@136bpm",
-          "duration_secs": 9831,
-          "avg_hr": 136,
-          "max_hr": 173,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i170272366",
       "date": "2026-07-28",
