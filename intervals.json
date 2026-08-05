@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T23:39:20.709982",
+  "generated_at": "2026-08-05T01:00:38.719756",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -368,6 +368,25 @@
           "zone": 1,
           "training_load": 37.76511,
           "decoupling": 2.0939503
+        }
+      ]
+    },
+    {
+      "activity_id": "i172555615",
+      "date": "2026-08-04",
+      "type": "Ride",
+      "name": "Allez running great after some much needed drivetrain maintenance!",
+      "interval_summary": [
+        "1x 1h54m 140bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "6868s@140bpm",
+          "duration_secs": 6868,
+          "avg_hr": 140,
+          "max_hr": 174,
+          "zone": 1
         }
       ]
     }
