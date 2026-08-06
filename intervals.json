@@ -1,57 +1,9 @@
 {
-  "generated_at": "2026-08-05T23:34:04.716681",
+  "generated_at": "2026-08-06T01:00:29.486572",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i170272366",
-      "date": "2026-07-28",
-      "type": "Ride",
-      "name": "New shoes",
-      "interval_summary": [
-        "1x 21s 755w"
-      ],
-      "intervals": [
-        {
-          "type": "RECOVERY",
-          "duration_secs": 4188,
-          "avg_power": 177,
-          "max_power": 806,
-          "avg_hr": 140,
-          "max_hr": 195,
-          "avg_cadence": 78.7046,
-          "zone": 2,
-          "training_load": 50.935875,
-          "decoupling": 5.4608283
-        },
-        {
-          "type": "WORK",
-          "label": "21s@755w84rpm",
-          "duration_secs": 21,
-          "avg_power": 755,
-          "max_power": 856,
-          "avg_hr": 153,
-          "max_hr": 179,
-          "avg_cadence": 83.52381,
-          "zone": 7,
-          "training_load": 0.9878432,
-          "decoupling": 17.807602
-        },
-        {
-          "type": "RECOVERY",
-          "duration_secs": 1047,
-          "avg_power": 148,
-          "max_power": 603,
-          "avg_hr": 137,
-          "max_hr": 188,
-          "avg_cadence": 78.34957,
-          "zone": 1,
-          "training_load": 16.000235,
-          "decoupling": -7.282669
-        }
-      ]
-    },
     {
       "activity_id": "i170954473",
       "date": "2026-07-30",
