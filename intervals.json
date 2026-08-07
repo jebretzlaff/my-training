@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T15:39:24.429991",
+  "generated_at": "2026-08-07T00:30:42.084881",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -338,6 +338,25 @@
           "duration_secs": 6868,
           "avg_hr": 140,
           "max_hr": 174,
+          "zone": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "i173219844",
+      "date": "2026-08-06",
+      "type": "Ride",
+      "name": "Ringle",
+      "interval_summary": [
+        "1x 1h9m 137bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "4176s@137bpm",
+          "duration_secs": 4176,
+          "avg_hr": 137,
+          "max_hr": 166,
           "zone": 1
         }
       ]
