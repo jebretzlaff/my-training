@@ -70,7 +70,7 @@
   },
   "metadata": {
     "athlete_id": "REDACTED",
-    "last_updated": "2026-08-08T17:22:17.552775",
+    "last_updated": "2026-08-08T17:53:06.831780",
     "data_range_days": 7,
     "extended_range_days": 28,
     "version": "3.92"
@@ -617,7 +617,7 @@
     "p_max": 1324,
     "power_model_source": "wellness.sportInfo",
     "vo2max": null,
-    "calculation_timestamp": "2026-08-08T17:22:17.551620",
+    "calculation_timestamp": "2026-08-08T17:53:06.830600",
     "data_quality": {
       "hrv_data_points": 0,
       "rhr_data_points": 0,
@@ -718,7 +718,8 @@
           "z7_time": 0
         }
       },
-      "has_intervals": false
+      "has_intervals": false,
+      "description": "\u200dcamping with all my belongings in the van\ud83d\ude02\n\n\ud83c\udfb7\ud83d\udc1b 56.84 new miles\n\n-- From Wandrer"
     },
     {
       "id": "i173219844",
