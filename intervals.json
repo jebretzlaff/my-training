@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-08-07T23:33:09.440645",
+  "generated_at": "2026-08-08T00:03:43.326741",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i170954473",
-      "date": "2026-07-30",
-      "type": "Ride",
-      "name": "EZ nine mile",
-      "interval_summary": [
-        "1x 48m35s 142bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "2915s@142bpm",
-          "duration_secs": 2915,
-          "avg_hr": 142,
-          "max_hr": 168,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i171544261",
       "date": "2026-07-31",
