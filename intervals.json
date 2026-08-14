@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T23:21:56.528082",
+  "generated_at": "2026-08-14T00:02:57.255926",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -57,6 +57,25 @@
           "duration_secs": 5779,
           "avg_hr": 134,
           "max_hr": 188,
+          "zone": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "i175601742",
+      "date": "2026-08-13",
+      "type": "Ride",
+      "name": "Ramba with Matt and dad!",
+      "interval_summary": [
+        "1x 2h9m 146bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "7741s@146bpm",
+          "duration_secs": 7741,
+          "avg_hr": 146,
+          "max_hr": 193,
           "zone": 1
         }
       ]
