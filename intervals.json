@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-08-16T23:52:49.580571",
+  "generated_at": "2026-08-17T00:25:56.479657",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i173875534",
-      "date": "2026-08-08",
-      "type": "Ride",
-      "name": "Ramba with dad!",
-      "interval_summary": [
-        "1x 1h46m 131bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "6410s@131bpm",
-          "duration_secs": 6410,
-          "avg_hr": 131,
-          "max_hr": 183,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i175315819",
       "date": "2026-08-12",
