@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-08-21T23:56:16.244773",
+  "generated_at": "2026-08-25T20:26:43.663808",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
     {
-      "activity_id": "i175601742",
-      "date": "2026-08-13",
+      "activity_id": "i179793567",
+      "date": "2026-08-25",
       "type": "Ride",
-      "name": "Ramba with Matt and dad!",
+      "name": "Hancock lyfe chose me",
       "interval_summary": [
-        "1x 2h9m 146bpm"
+        "1x 1h42m 138bpm"
       ],
       "intervals": [
         {
           "type": "WORK",
-          "label": "7741s@146bpm",
-          "duration_secs": 7741,
-          "avg_hr": 146,
-          "max_hr": 193,
+          "label": "6161s@138bpm",
+          "duration_secs": 6161,
+          "avg_hr": 138,
+          "max_hr": 171,
           "zone": 1
         }
       ]
