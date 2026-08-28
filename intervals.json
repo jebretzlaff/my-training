@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T20:44:51.065775",
+  "generated_at": "2026-08-28T04:28:54.183959",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -19,6 +19,25 @@
           "duration_secs": 6161,
           "avg_hr": 138,
           "max_hr": 171,
+          "zone": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "i180498593",
+      "date": "2026-08-27",
+      "type": "Ride",
+      "name": "Cycling",
+      "interval_summary": [
+        "1x 1h57m 148bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "7057s@148bpm",
+          "duration_secs": 7057,
+          "avg_hr": 148,
+          "max_hr": 194,
           "zone": 1
         }
       ]
