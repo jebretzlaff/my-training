@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T19:53:27.060065",
+  "generated_at": "2026-08-30T22:09:43.303600",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -38,6 +38,25 @@
           "duration_secs": 7057,
           "avg_hr": 148,
           "max_hr": 194,
+          "zone": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "i181509567",
+      "date": "2026-08-30",
+      "type": "Ride",
+      "name": "Metric century if I had my wheel speed sensor",
+      "interval_summary": [
+        "1x 5h25m 148bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "19547s@148bpm",
+          "duration_secs": 19547,
+          "avg_hr": 148,
+          "max_hr": 188,
           "zone": 1
         }
       ]
