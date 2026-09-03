@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-09-02T23:23:41.280199",
+  "generated_at": "2026-09-03T01:13:28.058205",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i179793567",
-      "date": "2026-08-25",
-      "type": "Ride",
-      "name": "Hancock lyfe chose me",
-      "interval_summary": [
-        "1x 1h42m 138bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "6161s@138bpm",
-          "duration_secs": 6161,
-          "avg_hr": 138,
-          "max_hr": 171,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i180498593",
       "date": "2026-08-27",
