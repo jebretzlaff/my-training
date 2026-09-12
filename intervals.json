@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T19:42:28.363061",
+  "generated_at": "2026-09-12T21:38:45.331329",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -146,6 +146,54 @@
           "zone": 1,
           "training_load": 55.8125,
           "decoupling": 23.584276
+        }
+      ]
+    },
+    {
+      "activity_id": "i186013807",
+      "date": "2026-09-12",
+      "type": "Ride",
+      "name": "Marji specific workout",
+      "interval_summary": [
+        "1x 2m31s 303w"
+      ],
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 549,
+          "avg_power": 79,
+          "max_power": 674,
+          "avg_hr": 189,
+          "max_hr": 198,
+          "avg_cadence": 92.58042,
+          "zone": 1,
+          "training_load": 1.5005592,
+          "decoupling": "-Infinity"
+        },
+        {
+          "type": "WORK",
+          "label": "151s@303w93rpm",
+          "duration_secs": 151,
+          "avg_power": 303,
+          "max_power": 416,
+          "avg_hr": 185,
+          "max_hr": 189,
+          "avg_cadence": 93.304634,
+          "zone": 4,
+          "training_load": 4.0567055,
+          "decoupling": -3.8850996
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 720,
+          "avg_power": 139,
+          "max_power": 377,
+          "avg_hr": 136,
+          "max_hr": 186,
+          "avg_cadence": 73.9,
+          "zone": 1,
+          "training_load": 5.5207367,
+          "decoupling": -10.641479
         }
       ]
     }
