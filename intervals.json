@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-09-15T22:28:13.754727",
+  "generated_at": "2026-09-16T00:37:03.848588",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i184354200",
-      "date": "2026-09-07",
-      "type": "Ride",
-      "name": "2 weeks until Marji!!",
-      "interval_summary": [
-        "1x 3h29m 144bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "12552s@144bpm",
-          "duration_secs": 12552,
-          "avg_hr": 144,
-          "max_hr": 188,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i185382199",
       "date": "2026-09-10",
