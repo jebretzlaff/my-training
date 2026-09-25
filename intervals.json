@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-09-24T23:59:12.309264",
+  "generated_at": "2026-09-25T03:23:42.282792",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i187469549",
-      "date": "2026-09-16",
-      "type": "Ride",
-      "name": "Transmission goes absolutely insane",
-      "interval_summary": [
-        "1x 2h21m 143bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "8472s@143bpm",
-          "duration_secs": 8472,
-          "avg_hr": 143,
-          "max_hr": 185,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i188078573",
       "date": "2026-09-18",
