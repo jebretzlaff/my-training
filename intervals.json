@@ -1,46 +1,9 @@
 {
-  "generated_at": "2026-09-26T22:20:04.805963",
+  "generated_at": "2026-09-27T00:42:29.048745",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i188078573",
-      "date": "2026-09-18",
-      "type": "Ride",
-      "name": "System is primed",
-      "interval_summary": [
-        "1x 40m6s 124bpm",
-        "1x 7m52s 171bpm",
-        "1x 1h18m 123bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "2406s@124bpm",
-          "duration_secs": 2406,
-          "avg_hr": 124,
-          "max_hr": 170,
-          "zone": 1
-        },
-        {
-          "type": "WORK",
-          "label": "472s@171bpm",
-          "duration_secs": 472,
-          "avg_hr": 171,
-          "max_hr": 190,
-          "zone": 3
-        },
-        {
-          "type": "WORK",
-          "label": "4703s@123bpm",
-          "duration_secs": 4703,
-          "avg_hr": 123,
-          "max_hr": 186,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i188364112",
       "date": "2026-09-19",
