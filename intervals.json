@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-10-01T21:07:09.161565",
+  "generated_at": "2026-10-02T00:43:04.358248",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i189754825",
-      "date": "2026-09-23",
-      "type": "Ride",
-      "name": "Cycling",
-      "interval_summary": [
-        "1x 1h23m 138bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "4990s@138bpm",
-          "duration_secs": 4990,
-          "avg_hr": 138,
-          "max_hr": 172,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i192064970",
       "date": "2026-09-30",
@@ -38,6 +19,25 @@
           "duration_secs": 3714,
           "avg_hr": 148,
           "max_hr": 193,
+          "zone": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "i192442182",
+      "date": "2026-10-01",
+      "type": "Ride",
+      "name": "Afternoon of dreams",
+      "interval_summary": [
+        "1x 2h7m 146bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "7659s@146bpm",
+          "duration_secs": 7659,
+          "avg_hr": 146,
+          "max_hr": 176,
           "zone": 1
         }
       ]
