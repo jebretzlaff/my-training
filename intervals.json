@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T13:33:33.919405",
+  "generated_at": "2026-10-09T18:58:14.781564",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -96,6 +96,25 @@
           "avg_hr": 167,
           "max_hr": 197,
           "zone": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "i195466371",
+      "date": "2026-10-09",
+      "type": "Ride",
+      "name": "Collegiate Nats XCO\ud83e\udee8",
+      "interval_summary": [
+        "1x 1h 185bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "3645s@185bpm",
+          "duration_secs": 3645,
+          "avg_hr": 185,
+          "max_hr": 198,
+          "zone": 4
         }
       ]
     }
