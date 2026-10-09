@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-10-08T20:15:44.033722",
+  "generated_at": "2026-10-09T00:29:20.565636",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i192064970",
-      "date": "2026-09-30",
-      "type": "Ride",
-      "name": "Beautiful Evening Ride",
-      "interval_summary": [
-        "1x 1h1m 148bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "3714s@148bpm",
-          "duration_secs": 3714,
-          "avg_hr": 148,
-          "max_hr": 193,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i192442182",
       "date": "2026-10-01",
@@ -96,6 +77,25 @@
           "avg_hr": 150,
           "max_hr": 193,
           "zone": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "i195277887",
+      "date": "2026-10-08",
+      "type": "Ride",
+      "name": "Cycling",
+      "interval_summary": [
+        "1x 47m30s 167bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "2850s@167bpm",
+          "duration_secs": 2850,
+          "avg_hr": 167,
+          "max_hr": 197,
+          "zone": 3
         }
       ]
     }
