@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-10-09T22:59:41.687019",
+  "generated_at": "2026-10-10T02:05:23.132777",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i192442182",
-      "date": "2026-10-01",
-      "type": "Ride",
-      "name": "Afternoon of dreams",
-      "interval_summary": [
-        "1x 2h7m 146bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "7659s@146bpm",
-          "duration_secs": 7659,
-          "avg_hr": 146,
-          "max_hr": 176,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i192755836",
       "date": "2026-10-02",
