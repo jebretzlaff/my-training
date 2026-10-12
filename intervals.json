@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-10-11T22:08:48.900823",
+  "generated_at": "2026-10-12T01:16:51.793953",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i193158066",
-      "date": "2026-10-03",
-      "type": "Ride",
-      "name": "Swedetown with Isaac! Beautiful colors",
-      "interval_summary": [
-        "1x 2h51m 137bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "10307s@137bpm",
-          "duration_secs": 10307,
-          "avg_hr": 137,
-          "max_hr": 162,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i194878287",
       "date": "2026-10-07",
