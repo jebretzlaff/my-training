@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-10-15T22:33:22.284340",
+  "generated_at": "2026-10-16T00:43:08.300474",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i194878287",
-      "date": "2026-10-07",
-      "type": "Ride",
-      "name": "Unemployed friend on a random Wednesday",
-      "interval_summary": [
-        "1x 1h18m 150bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "4706s@150bpm",
-          "duration_secs": 4706,
-          "avg_hr": 150,
-          "max_hr": 193,
-          "zone": 2
-        }
-      ]
-    },
     {
       "activity_id": "i195277887",
       "date": "2026-10-08",
