@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T19:16:47.103319",
+  "generated_at": "2026-10-28T23:20:32.263098",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -160,6 +160,25 @@
           "duration_secs": 6850,
           "avg_hr": 144,
           "max_hr": 186,
+          "zone": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "i202953431",
+      "date": "2026-10-28",
+      "type": "Ride",
+      "name": "Beautiful conditions!",
+      "interval_summary": [
+        "1x 2h4m 143bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "7466s@143bpm",
+          "duration_secs": 7466,
+          "avg_hr": 143,
+          "max_hr": 190,
           "zone": 1
         }
       ]
