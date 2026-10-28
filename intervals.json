@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T01:29:36.685025",
+  "generated_at": "2026-10-28T07:06:38.971027",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -141,6 +141,25 @@
           "duration_secs": 4043,
           "avg_hr": 144,
           "max_hr": 180,
+          "zone": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "i202568590",
+      "date": "2026-10-27",
+      "type": "Ride",
+      "name": "Dark, cold, rainy, but I\u2019m Batman so it\u2019s fine",
+      "interval_summary": [
+        "1x 1h54m 144bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "6850s@144bpm",
+          "duration_secs": 6850,
+          "avg_hr": 144,
+          "max_hr": 186,
           "zone": 1
         }
       ]
