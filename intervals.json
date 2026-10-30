@@ -1,83 +1,9 @@
 {
-  "generated_at": "2026-10-29T20:33:50.498663",
+  "generated_at": "2026-10-30T00:18:41.492045",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i200198566",
-      "date": "2026-10-21",
-      "type": "Ride",
-      "name": "Ottawa National Forest adventure stoke replenisher",
-      "interval_summary": [
-        "1x 3m1s 269w",
-        "1x 4m48s 240w"
-      ],
-      "intervals": [
-        {
-          "type": "RECOVERY",
-          "duration_secs": 2158,
-          "avg_power": 182,
-          "max_power": 354,
-          "avg_hr": 146,
-          "max_hr": 171,
-          "avg_cadence": 84.25356,
-          "zone": 2,
-          "training_load": 23.579285,
-          "decoupling": 3.0906892
-        },
-        {
-          "type": "WORK",
-          "label": "181s@269w76rpm",
-          "duration_secs": 181,
-          "avg_power": 269,
-          "max_power": 333,
-          "avg_hr": 171,
-          "max_hr": 180,
-          "avg_cadence": 76.24862,
-          "zone": 3,
-          "training_load": 3.9005466,
-          "decoupling": -1.8451736
-        },
-        {
-          "type": "RECOVERY",
-          "duration_secs": 2809,
-          "avg_power": 178,
-          "max_power": 388,
-          "avg_hr": 148,
-          "max_hr": 179,
-          "avg_cadence": 80.906746,
-          "zone": 2,
-          "training_load": 29.37937,
-          "decoupling": -2.3517954
-        },
-        {
-          "type": "WORK",
-          "label": "288s@240w84rpm",
-          "duration_secs": 288,
-          "avg_power": 240,
-          "max_power": 344,
-          "avg_hr": 162,
-          "max_hr": 170,
-          "avg_cadence": 83.673615,
-          "zone": 3,
-          "training_load": 5.05241,
-          "decoupling": 1.3927276
-        },
-        {
-          "type": "RECOVERY",
-          "duration_secs": 17586,
-          "avg_power": 158,
-          "max_power": 498,
-          "avg_hr": 151,
-          "max_hr": 177,
-          "avg_cadence": 77.53779,
-          "zone": 1,
-          "training_load": 153.04759,
-          "decoupling": 0.15433204
-        }
-      ]
-    },
     {
       "activity_id": "i200449413",
       "date": "2026-10-22",
@@ -179,6 +105,25 @@
           "duration_secs": 7466,
           "avg_hr": 143,
           "max_hr": 190,
+          "zone": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "i203374560",
+      "date": "2026-10-29",
+      "type": "Ride",
+      "name": "C4",
+      "interval_summary": [
+        "1x 1h17m 139bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "4633s@139bpm",
+          "duration_secs": 4633,
+          "avg_hr": 139,
+          "max_hr": 185,
           "zone": 1
         }
       ]
