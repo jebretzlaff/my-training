@@ -1,57 +1,9 @@
 {
-  "generated_at": "2026-10-30T22:30:09.435215",
+  "generated_at": "2026-10-31T01:43:45.222456",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i200449413",
-      "date": "2026-10-22",
-      "type": "Ride",
-      "name": "Lake Gogebic Loop!",
-      "interval_summary": [
-        "1x 12s 580w"
-      ],
-      "intervals": [
-        {
-          "type": "RECOVERY",
-          "duration_secs": 3526,
-          "avg_power": 195,
-          "max_power": 472,
-          "avg_hr": 157,
-          "max_hr": 182,
-          "avg_cadence": 84.729774,
-          "zone": 2,
-          "training_load": 46.909252,
-          "decoupling": 9.280334
-        },
-        {
-          "type": "WORK",
-          "label": "12s@580w92rpm",
-          "duration_secs": 12,
-          "avg_power": 580,
-          "max_power": 693,
-          "avg_hr": 144,
-          "max_hr": 162,
-          "avg_cadence": 91.75,
-          "zone": 7,
-          "training_load": 0.117103785,
-          "decoupling": 29.1639
-        },
-        {
-          "type": "RECOVERY",
-          "duration_secs": 4147,
-          "avg_power": 147,
-          "max_power": 463,
-          "avg_hr": 141,
-          "max_hr": 174,
-          "avg_cadence": 80.58422,
-          "zone": 1,
-          "training_load": 32.73978,
-          "decoupling": 8.698482
-        }
-      ]
-    },
     {
       "activity_id": "i202097297",
       "date": "2026-10-26",
