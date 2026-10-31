@@ -62,15 +62,15 @@
       "menstrual": "menstrual_phase and menstrual_phase_predicted are not on the 1-4 scale. Values: PERIOD, FOLLICULAR, OVULATION, LUTEAL, etc."
     },
     "quick_stats": {
-      "total_training_hours": 5.69,
-      "total_training_formatted": "5h41m",
-      "total_activities": 4,
+      "total_training_hours": 6.53,
+      "total_training_formatted": "6h31m",
+      "total_activities": 5,
       "total_tss": 230
     }
   },
   "metadata": {
     "athlete_id": "REDACTED",
-    "last_updated": "2026-10-31T17:59:18.458718",
+    "last_updated": "2026-10-31T20:58:05.525293",
     "data_range_days": 7,
     "extended_range_days": 28,
     "version": "3.92"
@@ -147,14 +147,14 @@
   "summary": {
     "period_description": "Last 7 days of training (including today)",
     "note": "Duration calculated from API moving_time field.",
-    "total_duration_decimal_hours": 5.69,
-    "total_activities": 4,
+    "total_duration_decimal_hours": 6.53,
+    "total_activities": 5,
     "by_activity_type": {
       "Ride": {
-        "duration_decimal_hours": 5.69,
-        "count": 4,
+        "duration_decimal_hours": 6.53,
+        "count": 5,
         "tss": 230,
-        "distance_km": 127.4
+        "distance_km": 137.6
       }
     }
   },
@@ -543,7 +543,7 @@
     "consistency_index": null,
     "consistency_details": {
       "planned_days": 0,
-      "completed_days": 4,
+      "completed_days": 5,
       "matched_days": 0,
       "note": "No planned workouts in period"
     },
@@ -601,12 +601,12 @@
     "p_max": 1251,
     "power_model_source": "wellness.sportInfo",
     "vo2max": null,
-    "calculation_timestamp": "2026-10-31T17:59:18.457521",
+    "calculation_timestamp": "2026-10-31T20:58:05.524057",
     "data_quality": {
       "hrv_data_points": 0,
       "rhr_data_points": 0,
-      "activities_7d": 4,
-      "activities_28d": 17,
+      "activities_7d": 5,
+      "activities_28d": 18,
       "planned_workouts_7d": 0,
       "ftp_history_days": {
         "indoor": 0,
@@ -615,6 +615,42 @@
     }
   },
   "recent_activities": [
+    {
+      "id": "i204076255",
+      "date": "2026-10-31T10:01:26",
+      "type": "Ride",
+      "name": "Training Session",
+      "duration_hours": 0.84,
+      "distance_km": 10.16,
+      "tss": null,
+      "intensity_factor": null,
+      "avg_power": null,
+      "normalized_power": null,
+      "avg_hr": null,
+      "max_hr": null,
+      "avg_cadence": null,
+      "avg_speed": 9.8,
+      "max_speed": 38.0,
+      "avg_pace": null,
+      "avg_temp": 12.114878,
+      "weather": null,
+      "humidity": null,
+      "wind_speed": null,
+      "work_kj": null,
+      "calories": null,
+      "carbs_used": null,
+      "carbs_ingested": null,
+      "variability_index": null,
+      "decoupling": null,
+      "efficiency_factor": null,
+      "hrrc": null,
+      "elevation_m": 260.0,
+      "feel": null,
+      "rpe": null,
+      "zone_distribution": null,
+      "has_intervals": false,
+      "description": "I\u2019d like to thank all the pedaling segments. Such a fun event"
+    },
     {
       "id": "i203374560",
       "date": "2026-10-29T17:04:59",
@@ -1084,10 +1120,10 @@
     "bail_no_match": 0
   },
   "weekly_summary": {
-    "total_training_hours": 5.69,
-    "total_training_formatted": "5h41m",
+    "total_training_hours": 6.53,
+    "total_training_formatted": "6h31m",
     "total_tss": 230,
-    "activities_count": 4,
+    "activities_count": 5,
     "avg_hrv": null,
     "avg_resting_hr": null
   },
