@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T14:25:54.380323",
+  "generated_at": "2026-11-07T18:55:50.871980",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
@@ -20,6 +20,25 @@
           "avg_hr": 144,
           "max_hr": 197,
           "zone": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "i207040172",
+      "date": "2026-11-07",
+      "type": "Ride",
+      "name": "ICEMAN SINGLESPEED \ud83e\udd47 39&under",
+      "interval_summary": [
+        "1x 1h51m 182bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "6670s@182bpm",
+          "duration_secs": 6670,
+          "avg_hr": 182,
+          "max_hr": 204,
+          "zone": 4
         }
       ]
     }
