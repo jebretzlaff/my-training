@@ -1,28 +1,9 @@
 {
-  "generated_at": "2026-11-14T23:22:22.575145",
+  "generated_at": "2026-11-15T02:52:08.907872",
   "version": "3.92",
   "scan_hours": 72,
   "retention_days": 8,
   "activities": [
-    {
-      "activity_id": "i206769480",
-      "date": "2026-11-06",
-      "type": "Ride",
-      "name": "The big dance tomorrow could be a wet one",
-      "interval_summary": [
-        "1x 49m8s 144bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "2948s@144bpm",
-          "duration_secs": 2948,
-          "avg_hr": 144,
-          "max_hr": 197,
-          "zone": 1
-        }
-      ]
-    },
     {
       "activity_id": "i207040172",
       "date": "2026-11-07",
